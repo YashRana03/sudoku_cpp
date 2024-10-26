@@ -11,6 +11,7 @@ int main() {
   /* This section illustrates the use of the pre-supplied helper functions. */
   cout << "============= Pre-supplied functions =============\n\n";
 
+
   cout << "Calling load_board():\n";
   load_board("easy.dat", board);
 
@@ -35,6 +36,7 @@ int main() {
   }
   cout << "complete.\n\n";
 
+  
   cout << "=================== Question 2 ===================\n\n";
 
   load_board("easy.dat", board);
@@ -48,7 +50,8 @@ int main() {
   display_board(board);
 
   // write more tests
-
+  
+  
   cout << "=================== Question 3 ===================\n\n";
 
   load_board("easy.dat", board);
@@ -59,9 +62,11 @@ int main() {
   }
   cout << '\n';
 
+  
   cout << "=================== Question 4 ===================\n\n";
 
   load_board("easy.dat", board);
+  display_board(board);
   if (solve_board(board)) {
     cout << "The 'easy' board has a solution:\n";
     display_board(board);
@@ -69,6 +74,7 @@ int main() {
     cout << "A solution cannot be found.\n";
   }
   cout << '\n';
+
 
   load_board("medium.dat", board);
   if (solve_board(board)) {
@@ -84,6 +90,37 @@ int main() {
   cout << "=================== Question 5 ===================\n\n";
 
   // write more tests
+  
+  load_board("mystery1.dat", board);
+  if (solve_board(board)) {
+    cout << "The 'mystery1' board has a solution:\n";
+    display_board(board);
+  } else {
+    cout << "A solution cannot be found.\n";
+  }
+  cout << '\n';
+
+
+  load_board("mystery2.dat", board);
+  if (solve_board(board)) {
+    cout << "The 'mystery2' board has a solution:\n";
+    display_board(board);
+  } else {
+    cout << "A solution cannot be found.\n";
+  }
+  cout << '\n';
+
+
+  load_board("mystery3.dat", board);
+  if (solve_board(board)) {
+    cout << "The 'mystery3' board has a solution:\n";
+    display_board(board);
+  } else {
+    cout << "A solution cannot be found.\n";
+  }
+  cout << '\n';
+
 
   return 0;
+
 }
