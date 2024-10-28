@@ -3,12 +3,11 @@ Summarise your findings here (see specification).
 Although the computer cannot understand the "difficulty" of solving the board, counting the number of recursive calls made is a good approximation. Therefore, to find out the difficulty level of each mystery board, I introduced an integer count variable in solve_board that I incremented in each recursive call. At the end of solving the board, this count variable is printed out.
 The code dealing with the count logic and printing has been commented out.
 
-Looking at the given easy and medium boards the solve_board function made 2172 and 17834 calls respectively. This seems to be in accordance with the assumption that increasing difficulty results in more recursive function calls.
 
 The solve_board function was then used to solve mystery1, mystery2 and mystery3.
-Mystery1 was solved with 439381 function calls.
+Mystery1 was solved with 421546 function calls.
 Mystery2 could not be solved.
-Mystery3 was solved with 465048 function calls.
-Therefore it can be concluded that mystery2 is the "Impossible" board as it couldn't be solved, mystery1 is the "hard" board to solve since it had fewer calls than mystery3 which is therefore the "extremely hard" board.
+Mystery3 was solved with 4055 function calls.
+Therefore it can be concluded that mystery2 is the "Impossible" board as it couldn't be solved, mystery1 is the "extremely hard" board to solve since it had more calls than mystery3 which is therefore the "hard" board.
 
 

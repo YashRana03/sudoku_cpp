@@ -176,8 +176,8 @@ bool solve_board(char board[9][9]){
 	char column = position[1];
 
 
-	//static int count = 0; // used to track the number of function calls
-	//count++;
+	static int count = 0; // used to track the number of function calls
+	count++;
 
 	// if the finished flag is set the position is reset to point to the start position
 	// this ensures that when the function is re-used to solve another board, the position points to the start of the board
@@ -185,13 +185,14 @@ bool solve_board(char board[9][9]){
 		finished = false;
 		position[0] = 'A';
 		position[1] = '0';
+		count = 0;
 	}
 
 	// base case: if the board is completely filled it means the board was solved therefore returning true
 	if(is_complete(board)){
 		save_board("something123.dat", board);
 		finished = true;
-		//cout << "The number of function calls was: " << count << endl; // printing the number of function calls
+		cout << "The number of function calls was: " << count << endl; // printing the number of function calls
 		return true;
 	}
 
@@ -230,6 +231,7 @@ bool solve_board(char board[9][9]){
 	// for this board thus, setting the finished flag
 	if(position[0] == 'A' && position[1] == '1') {
 		finished = true;
+		count = 0;
 	}
 	return false;
 }
