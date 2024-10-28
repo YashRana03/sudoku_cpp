@@ -80,7 +80,7 @@ bool is_complete(const char board[9][9]) {
 	//  and checks if the element is '.' if so returns false
 	for (int row = 0; row < 9; row++) {
 		for(int column = 0; column < 9; column++) {
-			if (board[row][column] == '.')
+			if (board[row][column] < '1' || board[row][column] > '9')
 				return false;
 		}
 	}
@@ -93,6 +93,10 @@ bool make_move(const char position[3], char digit, char board[9][9]) {
 
 	int row_index = (position[0]- 'A'); // Converting the letter in the position string to an integer from 0 to 8 (the row index)
 	int column_index = (position[1] - '1'); // converting the number in the position string to  an integer from 0 to 8 (the column index)
+
+	// checks if the digit is a valid value between 1 and 9
+	if(digit < '1' || digit > '9' )
+		return false;
 
 	// check if the row and column index provided are out of bounds
 	if(row_index < 0 || row_index > 8 || column_index < 0 || column_index > 8 )
@@ -143,11 +147,11 @@ bool save_board(const char* filename, char  board[9][9]) {
 	ofstream outFile;
 	outFile.open(filename);
 
-	if (!outFile) 
+	if (!outFile)
 		return false;
 
 	// iterating through each element in board and writing it to the file
-	for (int row = 0; row < 9; row++) { 
+	for (int row = 0; row < 9; row++) {
 		for(int column = 0; column < 9; column++) {
 			outFile << board[row][column];
 			if (outFile.fail()) // making sure the write operation was successful

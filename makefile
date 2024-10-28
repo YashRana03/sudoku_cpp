@@ -1,13 +1,13 @@
 target: sudoku
 
 sudoku: main.o sudoku.o
-	g++ main.o sudoku.o -o sudoku
+	g++ -Wall main.o sudoku.o -o sudoku
 
 main.o: main.cpp
-	g++ -c main.cpp -o main.o
+	g++ -Wall -c main.cpp -o main.o
 
 sudoku.o: sudoku.cpp
-	g++ -c sudoku.cpp -o sudoku.o
+	g++ -Wall -c sudoku.cpp -o sudoku.o
 
 clean:
 	rm *.o
