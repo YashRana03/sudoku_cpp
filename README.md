@@ -1,0 +1,1 @@
+This repository contains the C++ code for a text-based sudoku solver that attempts to solve provided sudoku boards of different difficulties. The program also measures the "difficulty" of the solved boards by displaying the number of recursive calls made. 
